@@ -52,4 +52,4 @@ Este script explora o modelo teórico de Priest & Klein (1983) sobre a probabili
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE.md](LICENSE) para detalhes. 
+Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para detalhes. 
