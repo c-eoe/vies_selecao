@@ -62,12 +62,12 @@ library(tidyverse)
 # Simulação: escolaridade e gênero ----------------------------------------
 
 # Definindo o número de observações
-N <- 1000
+N <- 2000
 # Definindo um valor arbitrário para a truncagem
-corte <- 5000
+corte <- 6000
 
 # Gerando os dados
-set.seed(123) # Para reprodutibilidade
+set.seed(1) # Para reprodutibilidade
 gen <- sample(c("Homem", "Mulher"), N, replace = TRUE, prob = c(0.5, 0.5))
 gen_dummy <- as.integer(gen == "Mulher")
 
@@ -77,7 +77,7 @@ educ_anos <- sample(4:20, N, replace = TRUE)
 # Associação entre salário, gênero e escolaridade
 # Note que existe interação entre gênero e escolaridade
 sal_base <- runif(N, min = 1500, max = 35000)
-sal <- sal_base - 1500 * gen_dummy + 500 * educ_anos - 200 * educ_anos * gen_dummy + rnorm(N, sd = 1500)
+sal <- sal_base - 3000 * gen_dummy + 500 * educ_anos - 200 * educ_anos * gen_dummy + rnorm(N, sd = 500)
 
 # Definimos que existe truncagem quando o salário é 
 # menor que corte + 500 * anos de escolaridade e o gênero é feminino
@@ -132,18 +132,95 @@ ggsave("fig/graf1.pdf", p, width = 8, height = 6, dpi = 600, bg = "white")
 # Modelos com e sem truncagem ---------------------------------------------
 
 modelo <- lm(
-  dal/1000 ~ gen + educ_anos, 
+  sal/1000 ~ gen * educ_anos, 
   data = dados
 )
 
 modelo_trunc <- lm(
-  salary/1000 ~ gen + educ_anos, 
+  sal/1000 ~ gen * educ_anos, 
   data = filter(dados, trunc == 0)
 )
 
 stargazer::stargazer(
-  modelo_trunc,
-  modelo, 
-  column.labels = c("Sem truncagem", "Com truncagem"),
+  modelo,
+  modelo_trunc, 
+  column.labels = c("Dados completos", "Com truncagem"),
   type = "latex"
 )
+
+
+# Modelos com amostragem --------------------------------------------------
+
+# distribuição dos dados completos, sem separar por educação
+p <- dados |> 
+  ggplot(aes(x = sal, fill = gen)) +
+  geom_density() +
+  scale_fill_viridis_d(begin = .2, end = .8, option = 1, alpha = .4) +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(
+    x = "Salário",
+    y = "Densidade",
+    fill = "Gênero"
+  )
+
+p
+
+# modelos com amostras de 86 pessoas
+set.seed(1)
+modelos_amostra <- purrr::map(1:3, \(x) {
+  lm(
+    sal/1000 ~ gen * educ_anos, 
+    data = dados |> 
+      filter(trunc == 0) |> 
+      slice_sample(n = 86)
+  )
+})
+
+stargazer::stargazer(
+  modelos_amostra, 
+  column.labels = c("Amostra 1", "Amostra 2", "Amostra 3"),
+  type = "latex"
+)
+
+
+# Gráfico cumulativo ------------------------------------------------------
+
+set.seed(99)
+n_amostras <- 1000
+
+# Realiza amostras de 86 observações, obtendo a média dos salários truncados 
+# e não truncados para as mulheres
+amostras <- map(seq_len(n_amostras), \(x) {
+  dados |> 
+    slice_sample(n = 86) |> 
+    summarise(
+      m_trunc = mean(sal[!trunc]),
+      m_ntrunc = mean(sal),
+      .by = gen
+    )
+}, .progress = TRUE)
+
+# Constrói o gráfico cumulativo das médias, comparando truncados e não truncados
+p <- amostras |> 
+  list_rbind(names_to = "amostra") |> 
+  pivot_longer(c(m_trunc, m_ntrunc)) |> 
+  mutate(
+    name = ifelse(name == "m_trunc", "Observado", "Real"),
+    name = factor(name, levels = c("Real", "Observado"))
+  ) |> 
+  ggplot(aes(x = value, colour = gen, linetype = name)) +
+  stat_ecdf(geom = "step", linewidth = 1.2) +
+  scale_colour_viridis_d(begin = .2, end = .8, option = 1) +
+  scale_linetype_manual(values = c(4, 1)) +
+  theme_minimal() +
+  labs(
+    x = "Salário",
+    y = "Densidade acumulada das médias",
+    colour = "Truncagem",
+    linetype = "Gênero"
+  )
+
+p
+
+ggsave("fig/monte1.pdf", p, width = 10, height = 6, dpi = 600, bg = "white")
