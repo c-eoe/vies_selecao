@@ -154,8 +154,10 @@ p2_dist <- plot_decisao(
 (p_litigio <- (p1_litigio / p2_litigio))
 (p_dist <- (p1_dist / p2_dist))
 
-#ggplot2::ggsave("fig/pk_simul1_litigio.pdf", p_litigio, width = 10, height = 8)  
-#ggplot2::ggsave("fig/pk_simul1_dist.pdf", p_dist, width = 10, height = 8)  
+ggplot2::ggsave("fig/pk_simul1_litigio.pdf", p_litigio, width = 10, height = 8)  
+ggplot2::ggsave("fig/pk_simul1_dist.pdf", p_dist, width = 10, height = 8)  
+ggplot2::ggsave("fig/pk_simul1_litigio.svg", p_litigio, width = 10, height = 8)  
+ggplot2::ggsave("fig/pk_simul1_dist.svg", p_dist, width = 10, height = 8)  
 
 
 # informação == 5, variando settlement
@@ -178,6 +180,7 @@ p2b_dist <- plot_decisao(
 (p_dist <- (p2_dist / p2b_dist))
 
 #ggplot2::ggsave("fig/pk_simul1b_litigio.pdf", p_litigio, width = 10, height = 8)  
+ggplot2::ggsave("fig/pk_simul1b_litigio.svg", p_litigio, width = 10, height = 8)  
 
 # Simulação 2: variando ys e informação
 
@@ -238,6 +241,9 @@ p3_dist <- plot_decisao(
 
 #ggplot2::ggsave("fig/pk_simul2_litigio.pdf", p_litigio, width = 10, height = 8)
 #ggplot2::ggsave("fig/pk_simul2_dist.pdf", p_dist, width = 10, height = 8)
+ggplot2::ggsave("fig/pk_simul2_litigio.svg", p_litigio, width = 10, height = 8)
+ggplot2::ggsave("fig/pk_simul2_dist.svg", p_dist, width = 10, height = 8)
+
 
 
 # Shiny app ---------------------------------------------------------------

@@ -128,6 +128,7 @@ p <- dados |>
 p
 
 ggsave("fig/graf1.pdf", p, width = 8, height = 6, dpi = 600, bg = "white")
+ggsave("fig/graf1.svg", p, width = 8, height = 6, dpi = 600, bg = "white")
 
 # Modelos com e sem truncagem ---------------------------------------------
 
@@ -165,6 +166,10 @@ p <- dados |>
   )
 
 p
+ggsave("fig/dist1.pdf", p, width = 8, height = 6, dpi = 600, bg = "white")
+ggsave("fig/dist1.svg", p, width = 8, height = 6, dpi = 600, bg = "white")
+
+
 
 # modelos com amostras de 86 pessoas
 set.seed(1)
@@ -224,3 +229,4 @@ p <- amostras |>
 p
 
 ggsave("fig/monte1.pdf", p, width = 10, height = 6, dpi = 600, bg = "white")
+ggsave("fig/monte1.svg", p, width = 10, height = 6, dpi = 600, bg = "white")
