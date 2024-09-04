@@ -149,6 +149,15 @@ stargazer::stargazer(
   type = "latex"
 )
 
+# copy to excel
+stargazer::stargazer(
+  modelo,
+  modelo_trunc, 
+  column.labels = c("Dados completos", "Com truncagem"),
+  type = "html"
+) |> 
+  writeLines("tabela1.html")
+
 
 # Modelos com amostragem --------------------------------------------------
 
@@ -188,6 +197,14 @@ stargazer::stargazer(
   type = "latex"
 )
 
+# copy to excel
+stargazer::stargazer(
+  modelos_amostra, 
+  column.labels = c("Amostra 1", "Amostra 2", "Amostra 3"),
+  type = "html"
+) |> 
+  writeLines("tabela2.html")
+
 
 # Gráfico cumulativo ------------------------------------------------------
 
@@ -222,8 +239,8 @@ p <- amostras |>
   labs(
     x = "Salário",
     y = "Densidade acumulada das médias",
-    colour = "Truncagem",
-    linetype = "Gênero"
+    colour = "Gênero",
+    linetype = "Truncagem"
   )
 
 p

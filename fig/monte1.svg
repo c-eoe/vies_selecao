@@ -59,12 +59,12 @@
 <text x='451.77' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='24.48px' lengthAdjust='spacingAndGlyphs'>25000</text>
 <text x='333.63' y='424.20' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='34.24px' lengthAdjust='spacingAndGlyphs'>Salário</text>
 <text transform='translate(13.36,202.99) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='168.82px' lengthAdjust='spacingAndGlyphs'>Densidade acumulada das médias</text>
-<text x='643.23' y='150.83' style='font-size: 11.00px; font-family: "Arial";' textLength='55.24px' lengthAdjust='spacingAndGlyphs'>Truncagem</text>
+<text x='643.23' y='150.83' style='font-size: 11.00px; font-family: "Arial";' textLength='36.71px' lengthAdjust='spacingAndGlyphs'>Gênero</text>
 <line x1='644.95' y1='166.11' x2='658.78' y2='166.11' style='stroke-width: 2.56; stroke: #3B0F70; stroke-linecap: butt;' />
 <line x1='644.95' y1='183.39' x2='658.78' y2='183.39' style='stroke-width: 2.56; stroke: #FE9F6D; stroke-linecap: butt;' />
 <text x='665.99' y='169.26' style='font-size: 8.80px; font-family: "Arial";' textLength='30.80px' lengthAdjust='spacingAndGlyphs'>Homem</text>
 <text x='665.99' y='186.54' style='font-size: 8.80px; font-family: "Arial";' textLength='26.90px' lengthAdjust='spacingAndGlyphs'>Mulher</text>
-<text x='643.23' y='222.99' style='font-size: 11.00px; font-family: "Arial";' textLength='36.71px' lengthAdjust='spacingAndGlyphs'>Gênero</text>
+<text x='643.23' y='222.99' style='font-size: 11.00px; font-family: "Arial";' textLength='55.24px' lengthAdjust='spacingAndGlyphs'>Truncagem</text>
 <line x1='644.95' y1='238.27' x2='658.78' y2='238.27' style='stroke-width: 2.56; stroke-dasharray: 3.41,10.24,13.66,10.24; stroke-linecap: butt;' />
 <line x1='644.95' y1='255.55' x2='658.78' y2='255.55' style='stroke-width: 2.56; stroke-linecap: butt;' />
 <text x='665.99' y='241.42' style='font-size: 8.80px; font-family: "Arial";' textLength='18.09px' lengthAdjust='spacingAndGlyphs'>Real</text>
