@@ -148,7 +148,7 @@ p2_dist <- plot_decisao(
   y = y_calc, pa = pa_calc, pr = pr_calc, 
   ys = 1, limite = limite_calc, info = 5
 ) +
-  labs(title = "Informação baixa")
+  labs(title = "Informação alta")
 
 # juntando gráficos
 (p_litigio <- (p1_litigio / p2_litigio))
@@ -173,7 +173,7 @@ p2b_dist <- plot_decisao(
   y = y_calc, pa = pa_calc, pr = pr_calc, 
   ys = 1, limite = limite_calc, info = 5
 ) +
-  labs(title = "Informação baixa")
+  labs(title = "Informação alta")
 
 # juntando gráficos
 (p_litigio <- (p2_litigio / p2b_litigio))
@@ -199,7 +199,7 @@ p1_dist <- plot_decisao(
   y = y_calc, pa = pa_calc, pr = pr_calc, 
   ys = 1, limite = limite_calc, info = 1
 ) +
-  labs(title = "Informação baixa, limite de mérido baixo")
+  labs(title = "Informação baixa, limite de mérito baixo")
 
 
 # ys == 2, info == 1
@@ -215,7 +215,7 @@ p2_dist <- plot_decisao(
   y = y_calc, pa = pa_calc, pr = pr_calc, 
   ys = 2, limite = limite_calc, info = 1
 ) +
-  labs(title = "Informação baixa, limite de mérido alto")
+  labs(title = "Informação baixa, limite de mérito alto")
 
 # ys == 2, info == 4
 y_calc <- simular_y(n = 10000)
@@ -230,7 +230,7 @@ p3_dist <- plot_decisao(
   y = y_calc, pa = pa_calc, pr = pr_calc, 
   ys = 2, limite = limite_calc, info = 4
 ) +
-  labs(title = "Informação alta, limite de mérido alto")
+  labs(title = "Informação alta, limite de mérito alto")
 
 
 # juntando gráficos

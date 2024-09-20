@@ -139,7 +139,7 @@
 <text x='50.68' y='61.79' text-anchor='end' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='15.55px' lengthAdjust='spacingAndGlyphs'>1.2</text>
 <text x='382.25' y='183.91' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='38.88px' lengthAdjust='spacingAndGlyphs'>Mérito</text>
 <text transform='translate(22.48,105.14) rotate(-90)' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='66.92px' lengthAdjust='spacingAndGlyphs'>Densidade</text>
-<text x='56.96' y='24.48' style='font-size: 16.80px; font-family: "Arial";' textLength='301.61px' lengthAdjust='spacingAndGlyphs'>Informação baixa, limite de mérido baixo</text>
+<text x='56.96' y='24.48' style='font-size: 16.80px; font-family: "Arial";' textLength='296.93px' lengthAdjust='spacingAndGlyphs'>Informação baixa, limite de mérito baixo</text>
 </g>
 <defs>
   <clipPath id='cpNS40OHw3MTQuNTJ8MTkzLjgzfDM4Mi4xNw=='>
@@ -245,7 +245,7 @@
 <text x='50.68' y='249.69' text-anchor='end' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='15.55px' lengthAdjust='spacingAndGlyphs'>1.2</text>
 <text x='382.25' y='372.25' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='38.88px' lengthAdjust='spacingAndGlyphs'>Mérito</text>
 <text transform='translate(22.48,293.48) rotate(-90)' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='66.92px' lengthAdjust='spacingAndGlyphs'>Densidade</text>
-<text x='56.96' y='212.83' style='font-size: 16.80px; font-family: "Arial";' textLength='288.53px' lengthAdjust='spacingAndGlyphs'>Informação baixa, limite de mérido alto</text>
+<text x='56.96' y='212.83' style='font-size: 16.80px; font-family: "Arial";' textLength='283.85px' lengthAdjust='spacingAndGlyphs'>Informação baixa, limite de mérito alto</text>
 </g>
 <defs>
   <clipPath id='cpNS40OHw3MTQuNTJ8MzgyLjE3fDU3MC41Mg=='>
@@ -349,6 +349,6 @@
 <text x='50.68' y='437.60' text-anchor='end' style='font-size: 11.20px;fill: #4D4D4D; font-family: "Arial";' textLength='21.77px' lengthAdjust='spacingAndGlyphs'>1.25</text>
 <text x='382.25' y='560.60' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='38.88px' lengthAdjust='spacingAndGlyphs'>Mérito</text>
 <text transform='translate(22.48,481.83) rotate(-90)' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='66.92px' lengthAdjust='spacingAndGlyphs'>Densidade</text>
-<text x='56.96' y='401.18' style='font-size: 16.80px; font-family: "Arial";' textLength='275.44px' lengthAdjust='spacingAndGlyphs'>Informação alta, limite de mérido alto</text>
+<text x='56.96' y='401.18' style='font-size: 16.80px; font-family: "Arial";' textLength='270.76px' lengthAdjust='spacingAndGlyphs'>Informação alta, limite de mérito alto</text>
 </g>
 </svg>
